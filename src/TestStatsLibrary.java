@@ -27,6 +27,9 @@ public class TestStatsLibrary
         //FindMode
         System.out.println(sL.findMode(listOfNumbers));
 
+        //find standardDeviation
+        System.out.println(sL.findStandardDeviation(listOfNumbers));
+
 
     }
 }

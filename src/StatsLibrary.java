@@ -1,6 +1,6 @@
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.concurrent.atomic.AtomicInteger;
+import java.lang.Math;
 
 public class StatsLibrary 
 {
@@ -144,7 +144,31 @@ public class StatsLibrary
         }
     }
 
-    public void findStandardDeviation() {}
+    public double findStandardDeviation(ArrayList<Integer> listOfNumbers)    
+    {
+        double mean = findMean(listOfNumbers);
+        Double[] deviations = new Double[listOfNumbers.size()];
+        double sum = 0;
+        double standardDeviation = 0;
+
+        for(int i = 0; i < listOfNumbers.size(); i++)
+        {
+            deviations[i] = listOfNumbers.get(i) - mean; 
+        }
+
+        for(int i = 0; i < deviations.length; i++)
+        {
+            
+            deviations[i] = deviations[i] * deviations[i];
+            sum = deviations[i] + sum;
+        }
+
+        standardDeviation = sum / (listOfNumbers.size() - 1);
+
+        standardDeviation = Math.sqrt(standardDeviation);
+
+        return standardDeviation;
+    }
 
     /**
      * organizes the elements in an array list from least to greatest by sorting them around a pivot
