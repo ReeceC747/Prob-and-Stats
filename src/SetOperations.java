@@ -4,7 +4,6 @@ import javax.lang.model.type.NullType;
 
 public class SetOperations 
 {
-    //method to intersect two arraylists
     //method to return the compliment
 
 
@@ -82,6 +81,36 @@ public class SetOperations
         {
             return null;
         }
+    }
+
+    public ArrayList<Integer> compliment (ArrayList<Integer> sortedSet, ArrayList<Integer> subSet)
+    {
+        if(isSet(sortedSet) == true && isSet(subSet) == true)
+        {
+            QuickSort qS = new QuickSort();
+            subSet = qS.quickSort(subSet);
+            sortedSet = qS.quickSort(sortedSet);
+            ArrayList<Integer> compliment = new ArrayList<>();
+
+            int interval = 0;
+            for(int i = 0; i < sortedSet.size(); i++)
+            {
+                if(sortedSet.get(i) != subSet.get(interval))
+                {
+                    compliment.add(sortedSet.get(i));
+                }
+                else
+                {
+                    interval++;
+                }
+            }        
+            return compliment;    
+        }
+        else
+        {
+            return null;
+        }
+
     }
 
     private boolean isSet(ArrayList<Integer> set)

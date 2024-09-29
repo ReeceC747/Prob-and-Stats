@@ -13,6 +13,20 @@ public class TestStatsLibrary
         //Make an array list of numbers 0 -> 99
         ArrayList<Integer> listOfNumbers = new ArrayList();
         ArrayList<Integer> listOfNumbers2 = new ArrayList();
+
+        ArrayList<Integer> set = new ArrayList();
+        ArrayList<Integer> subSet = new ArrayList<>();
+        for(int i = 0; i < 10; i++)
+        {
+            set.add(i);
+        }
+        for(int i = 0; i < 5; i++)
+        {
+            int rng = generator.nextInt(10);
+            subSet.add(rng);
+        }
+
+        
         
         for(int i = 0; i < 9; i++)
         {
@@ -35,9 +49,11 @@ public class TestStatsLibrary
         // //find standardDeviation
         // System.out.println(sL.findStandardDeviation(listOfNumbers));
 
-        System.out.println(sO.union(listOfNumbers, listOfNumbers2));
+        // System.out.println(sO.union(listOfNumbers, listOfNumbers2));
 
-        System.out.println(sO.intersect(listOfNumbers, listOfNumbers2));
+        // System.out.println(sO.intersect(listOfNumbers, listOfNumbers2));
+
+        System.out.println(sO.compliment(set, subSet));
 
 
     }
