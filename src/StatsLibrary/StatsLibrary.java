@@ -1,5 +1,7 @@
+package StatsLibrary;
 import java.util.ArrayList;
 import java.lang.Math;
+import SortingAlgorithms.QuickSort;
 
 public class StatsLibrary 
 {
@@ -35,7 +37,8 @@ public class StatsLibrary
     public double findMedian(ArrayList<Integer> listOfNumbers) 
     {
         //inital variables
-        listOfNumbers = sortArrayList(listOfNumbers);
+        QuickSort sort = new QuickSort();
+        listOfNumbers = sort.quickSort(listOfNumbers);
         int size = listOfNumbers.size();
         double median;
 
@@ -69,7 +72,8 @@ public class StatsLibrary
     public int findMode(ArrayList<Integer> listOfNumbers)
     {
         int size = listOfNumbers.size();
-        listOfNumbers = sortArrayList(listOfNumbers);
+        QuickSort sort = new QuickSort();
+        listOfNumbers = sort.quickSort(listOfNumbers);
 
         boolean modeExist = true;
         int mostOccurences = 0;
@@ -170,90 +174,21 @@ public class StatsLibrary
     }
 
     /**
-     * organizes the elements in an array list from least to greatest by sorting them around a pivot
-     * @param unsortedArrayList
-     * @return sorted array list
+     * Returns the number of pairs if you were to pair each element in listOne with each element in listTwo
+     * @param listOne
+     * @param listTwo
+     * @return the number of pairs if you were to pair each element in listOne with each element in listTwo
      */
-    private ArrayList<Integer> sortArrayList(ArrayList<Integer> unsortedArrayList)
+    public int mnSize(ArrayList<Integer> listOne, ArrayList<Integer> listTwo)
     {
+        //Initial variables
+        int sizeOne = listOne.size();
+        int sizeTwo = listTwo.size();
 
-        ///initial variables
-        int size = unsortedArrayList.size();
-        int pivot = unsortedArrayList.get(size - 1);
-        int position = 0;
-
-        //Places numbers smaller than the pivot to the left of it
-        for(int i = 0; i < size - 1; i++)
-        {
-            if(unsortedArrayList.get(i) < pivot && i != position)
-            {
-                int tempI = unsortedArrayList.get(i);
-                int tempPos = unsortedArrayList.get(position);
-                unsortedArrayList.remove(position);
-                unsortedArrayList.add(position, tempI);
-                unsortedArrayList.remove(i);
-                unsortedArrayList.add(i, tempPos);
-                position++;
-            }
-            else if(unsortedArrayList.get(i) < pivot && i == position)
-            {
-                position++;
-            }
-        }
-
-        /**
-        * swaps the pivot with the element in "position" so that all elements to the left of the pivot are smaller and those to
-        * the right are equal to or greater than the pivot
-        */
-        int temp = unsortedArrayList.get(position);
-        unsortedArrayList.remove(position);
-        unsortedArrayList.add(position, pivot);
-        unsortedArrayList.remove(size - 1);
-        unsortedArrayList.add(size - 1, temp);
-
-        ArrayList<Integer> left = new ArrayList<>();
-        ArrayList<Integer> right = new ArrayList<>();
-
-
-        //Fills left and right arraylists with respective halves of the unsorted one
-        for(int i = 0; i < position; i++)
-        {
-            left.add(unsortedArrayList.get(i));
-        }
-        for(int i = position + 1; i < size; i++)
-        {
-            right.add(unsortedArrayList.get(i));
-        }
-
-        //if either left or right array list is bigger than one recurse the method, will eventually return a sorted Array list
-        if(left.size() > 1)
-        {
-            left = sortArrayList(left);
-        }
-        if(right.size() > 1)
-        {
-            right = sortArrayList(right);
-        }
-
-
-        //new sorted array
-        ArrayList<Integer> sortedArray = new ArrayList<>();
-
-        //add in sorted elements from least to greatest that are smaller than the pivot
-        for(int i = 0; i < left.size(); i++)
-        {
-            sortedArray.add(left.get(i));
-        }
-
-        //adds the pivot
-        sortedArray.add(pivot);
-
-        //Adds in the remaining elements which are greater than or equal to the pivot
-        for(int i = 0; i < right.size(); i++)
-        {
-            sortedArray.add(right.get(i));
-        }
-        //returns the sorted array
-        return sortedArray;
+        //multiplies the size
+        int mn = sizeOne * sizeTwo;
+        return mn;
     }
+    
+    
 }
