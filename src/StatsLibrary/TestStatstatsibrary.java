@@ -1,6 +1,7 @@
 package StatsLibrary;
 import java.util.ArrayList;
-import java.util.Random;
+import java.util.Arrays;
+
 
 /**
  * Test Class for Statstatsibrary methods
@@ -12,35 +13,48 @@ public class TestStatstatsibrary
         //Statstatsibrary object
         StatsLibrary stats = new StatsLibrary();
 
-        //Random object
-        Random generator = new Random();
+        //Empty ArrayLists of numbers
+        ArrayList<Integer> listOfNumbersOne = new ArrayList<>(Arrays.asList(23, 45, 67, 89, 12, 34, 56, 78, 90, 23));
+        ArrayList<Integer> listOfNumbersTwo = new ArrayList<>(Arrays.asList(15, 37, 62, 84, 19, 31, 54, 76, 98, 21));
+        ArrayList<Integer> groupSizes = new ArrayList<>(Arrays.asList(3, 4, 5, 6, 3));
 
-        //Empty ArrayList of numbers
-        ArrayList<Integer> listOfNumbers = new ArrayList<>();
+        int distinctObjects = 21;
+        int takenAtATime = 4;
 
-        //Fill the ArrayList with random numbers from 0 to 99
-        for(int i = 0; i < 10; i++)
-        {
-            listOfNumbers.add(generator.nextInt(100));
-        }
+        double probabilityA = .35;
+        double probabilityB = .65;
 
 
-        System.out.println("List of Numbers: " + listOfNumbers);
+        System.out.println("List of Numbers: " + listOfNumbersOne);
 
-        //find Mean
-        System.out.println("The mean: " + stats.findMean(listOfNumbers));
+        //find Mean, Expected Value: 51.7
+        System.out.println("The mean: " + stats.findMean(listOfNumbersOne));
 
-        //FindMedian
-        System.out.println("The median: " + stats.findMedian(listOfNumbers));
+        //FindMedian, Expected Value 61.5
+        System.out.println("The median: " + stats.findMedian(listOfNumbersOne));
 
-        //FindMode
-        System.out.println("The mode: " + stats.findMode(listOfNumbers));
+        //FindMode, Expected Value 23
+        System.out.println("The mode: " + stats.findMode(listOfNumbersOne));
 
-        //find standardDeviation
-        System.out.println("Standard Deviation: " + stats.findStandardDeviation(listOfNumbers));
+        //find standardDeviation, Expected Value ~28.6
+        System.out.println("Standard Deviation: " + stats.findStandardDeviation(listOfNumbersOne));
 
-        //Tests mn Rule
-        System.out.println("The number of pairs with an element from each pair:" + stats.mnSize(listOfNumbers, listOfNumbers));
+        //Tests mn Rule, Expected Value 100
+        System.out.println("The number of pairs with an element from each pair: " + stats.mnSize(listOfNumbersOne, listOfNumbersTwo));
 
+        //Tests Permutation, Expected Value: 143,640
+        System.out.println("The number of ways to choose " + takenAtATime + " objects from " + distinctObjects + " distinct objects: " 
+            + stats.permutation(distinctObjects, takenAtATime));
+
+        //Tests Partition, Expected Value: very big but first few digits are 68441
+        System.out.println("The number of ways to partition a set of " + distinctObjects + " objects into distinct groups of Varying Sizes " + groupSizes 
+            + " is: " + stats.partition(distinctObjects, groupSizes));
+
+        //Tests Combination, Expected Value: 5985
+        System.out.println("The number of ways to choose " + takenAtATime + " objects from " + distinctObjects + " objects: " 
+            + stats.combination(distinctObjects, takenAtATime));
+
+        //Tests Conditional Probability, Expected Value: .35
+        System.out.println("The probability of A given B: " + stats.conditionalProbability(probabilityA, probabilityB));
     }
 }
