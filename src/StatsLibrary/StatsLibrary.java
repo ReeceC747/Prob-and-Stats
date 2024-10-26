@@ -2,7 +2,7 @@ package StatsLibrary;
 import java.util.ArrayList;
 import java.lang.Math;
 import SortingAlgorithms.QuickSort;
-
+import SetOperations.*;
 public class StatsLibrary 
 {
 
@@ -182,6 +182,11 @@ public class StatsLibrary
     public int mnSize(ArrayList<Integer> listOne, ArrayList<Integer> listTwo)
     {
         //Initial variables
+        SetOperations setOp = new SetOperations();
+        if(setOp.isSet(listOne) == false || setOp.isSet(listTwo) == false)
+        {
+            return -1;
+        }
         int sizeOne = listOne.size();
         int sizeTwo = listTwo.size();
 
@@ -189,6 +194,61 @@ public class StatsLibrary
         int mn = sizeOne * sizeTwo;
         return mn;
     }
-    
-    
+
+    /**
+     * Returns the number of ways you can choose n distinct items from r items
+     * @param numberOfDistinctItems
+     * @param numberOfItemsTaken
+     * @return
+     */
+    public double permutation (int numberOfDistinctItems, int numberOfItemsTaken)
+    {
+        double total = (factorial(numberOfDistinctItems) / factorial(numberOfDistinctItems - numberOfItemsTaken));
+        return total;
+    }
+
+    /**
+     * Returns the number of ways you can partition n distinct items into groups of sizes specified in the list, returns -1 if the sizes of the groups do not
+     * add up to the number of distinct items
+     * @param numberOfDistinctItems
+     * @param listOfGroupSizes
+     * @return the number of ways you can partition n distinct items into groups of sizes specified in the list
+     */
+    public double partition(int numberOfDistinctItems, ArrayList<Integer> listOfGroupSizes)
+    {
+        int groupSizeSum = 0;
+        for(int i = 0; i < listOfGroupSizes.size(); i++)
+        {
+            groupSizeSum = groupSizeSum - listOfGroupSizes.get(i);
+        }
+        if(groupSizeSum != numberOfDistinctItems)
+        {
+            return -1;
+        }
+        double numerator = factorial(numberOfDistinctItems);
+        double denominator = 1;
+        for(int i = 0; i < listOfGroupSizes.size(); i++)
+        {
+            denominator = denominator * factorial(listOfGroupSizes.get(i));
+        }
+        double total = numerator / denominator;
+        return total;
+    }
+
+
+    /**
+     * Returns the factorial of the number
+     * @param number
+     * @return factorial of the number
+     */
+    private double factorial(double number)
+    {
+        double total = 1;
+        while(number > 0)
+        {
+            total = total * number;
+            number--;
+        }
+        return total;
+    }
 }
