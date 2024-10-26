@@ -1,4 +1,4 @@
-package MonteCarlo;
+package MonteCarlo.ThreeDoors;
 
 import java.util.Random;
 

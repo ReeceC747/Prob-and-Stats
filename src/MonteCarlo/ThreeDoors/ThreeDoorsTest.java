@@ -1,4 +1,4 @@
-package MonteCarlo;
+package MonteCarlo.ThreeDoors;
 
 public class ThreeDoorsTest 
 {
