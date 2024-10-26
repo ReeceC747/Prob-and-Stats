@@ -235,6 +235,29 @@ public class StatsLibrary
         return total;
     }
 
+    /**
+     * Returns the number of ways you can choose a number of items from a number of items
+     * @param numberOfItems
+     * @param numberOfItemsTaken
+     * @return the combination of the items
+     */
+    public double combination(int numberOfItems, int numberOfItemsTaken)
+    {
+        double total = factorial(numberOfItems) / (factorial(numberOfItemsTaken) * (factorial(numberOfItems - numberOfItemsTaken)));
+        return total;
+    }
+
+    /**
+     * returns the given probability of an event A given event B has happened
+     * @param eventA
+     * @param eventB
+     * @return the conditional probability of event A given event B
+     */
+    public double conditionalProbability(double eventA, double eventB)
+    {
+        double probability = (eventA * eventB)/eventB;
+        return probability;
+    }
 
     /**
      * Returns the factorial of the number
