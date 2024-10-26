@@ -27,11 +27,11 @@ public class TestSetOperations
         System.out.println("Union of subsetOne and subsetTwo: " + setOp.union(subsetOne, subsetTwo));
 
         //Tests intersect
-        System.out.println("Intersection of subsetOne and subsetTwo: " + setOp.intersect(subsetOne, subsetTwo));
+        System.out.println("Intersection of subsetOne and subsetTwo: " + setOp.intersection(subsetOne, subsetTwo));
 
         //Tests compliment
-        System.out.println("Compliment of subsetOne and set: " + setOp.compliment(set, subsetOne));
-        System.out.println("Compliment of subsetTwo and set: " + setOp.compliment(set, subsetTwo));
+        System.out.println("Compliment of subsetOne and set: " + setOp.complement(set, subsetOne));
+        System.out.println("Compliment of subsetTwo and set: " + setOp.complement(set, subsetTwo));
 
 
     }

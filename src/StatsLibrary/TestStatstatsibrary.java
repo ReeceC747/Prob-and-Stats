@@ -21,8 +21,11 @@ public class TestStatstatsibrary
         int distinctObjects = 21;
         int takenAtATime = 4;
 
-        double probabilityA = .35;
-        double probabilityB = .65;
+        double probabilityA = .7;
+        double probabilityB = .6;
+
+        int trials = 5;
+        int successes = 3;
 
 
         System.out.println("List of Numbers: " + listOfNumbersOne);
@@ -54,7 +57,17 @@ public class TestStatstatsibrary
         System.out.println("The number of ways to choose " + takenAtATime + " objects from " + distinctObjects + " objects: " 
             + stats.combination(distinctObjects, takenAtATime));
 
-        //Tests Conditional Probability, Expected Value: .35
+        //Tests Conditional Probability, Expected Value: .7
         System.out.println("The probability of A given B: " + stats.conditionalProbability(probabilityA, probabilityB));
+
+        //Tests Bayes Theorem, Expected Value: .78
+        System.out.println("The probability of A given B with bayes theorem: " + stats.bayes(probabilityA, probabilityB));
+
+        //Tests Binomial Distribution, Expected Value: .3087
+        System.out.println("The probability of " + successes + " successes in " + trials + " trials: " + stats.binomialDistribution(trials, successes, probabilityA));
+
+        //Tests Geometric Distribution, Expected Value: .00567
+        System.out.println("The probability of " + (trials - 1) + " fails until the first success: " + stats.geometricDistribution(trials, probabilityA));
     }
+
 }

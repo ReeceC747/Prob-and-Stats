@@ -260,6 +260,47 @@ public class StatsLibrary
     }
 
     /**
+     * Applies Bayes Theorem to get the probability of event A given event B
+     * @param eventA
+     * @param eventB
+     * @return the probability of event A given event B using bayes theorem
+     */
+    public double bayes(double eventA, double eventB)
+    {
+        double numerator = conditionalProbability(eventA, eventB) * eventB;
+        double denominator = conditionalProbability(eventA, eventB) * eventB + (conditionalProbability(1 - eventA, 1 - eventB) * (1 - eventB));
+        double probability = numerator / denominator;
+        return probability;
+    }
+
+    /**
+     * Returns the probability of a binomial distribution
+     * @param numberOfTrials
+     * @param numberOfSuccesses
+     * @param probabilityOfSuccess
+     * @return the probability of a binomial distribution
+     */
+    public double binomialDistribution(int numberOfTrials, int numberOfSuccesses, double probabilityOfSuccess)
+    {
+        double probability = combination(numberOfTrials, numberOfSuccesses) * Math.pow(probabilityOfSuccess, numberOfSuccesses) * 
+            Math.pow( 1 - probabilityOfSuccess, numberOfTrials - numberOfSuccesses);
+
+        return probability;
+    }
+
+    /**
+     * Returns the probability of a geometric distribution
+     * @param numberOfTrials
+     * @param probabilityOfSuccess
+     * @return the probability of a geometric distribution
+     */
+    public double geometricDistribution(int numberOfTrials, double probabilityOfSuccess)
+    {
+        double probability = Math.pow(1 - probabilityOfSuccess, numberOfTrials - 1) * probabilityOfSuccess;
+        return probability;
+    }
+
+    /**
      * Returns the factorial of the number
      * @param number
      * @return factorial of the number
