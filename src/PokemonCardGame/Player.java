@@ -61,6 +61,23 @@ public class Player
         premadeDeck.add(new Togedemaru());        
     }
 
+    public void chooseDeck(int choiceP)
+    {
+        if(choiceP == 1)
+        {
+            activeDeck = premadeDeck;
+        }
+        else if(choiceP == 2)
+        {
+            activeDeck = customDeck;
+        }
+        else
+        {
+            System.out.println("Invalid choice");
+        }
+    }
+
+
     //Getters and Setters ----------------------------------------------
     public String getName()
     {

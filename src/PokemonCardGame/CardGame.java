@@ -15,12 +15,14 @@ public class CardGame
         deckBuilder(player1);
         deckBuilder(player2);
 
+        
 
     }
 
     private void deckBuilder(Player player)
     {
         Scanner input = new Scanner(System.in);
+        boolean done = false;
 
         System.out.println("Game started");
 
@@ -28,20 +30,27 @@ public class CardGame
         System.out.println("1. Premade");
         System.out.println("2. Create your own");
 
-        int choice = input.nextInt();
+        while(!done)
+        {
+            int choice = input.nextInt();
 
-        if(choice == 1)
-        {
-            System.out.println("You have chosen a premade deck");
-            //deck ratio, 12 energy, 12 pokemon, 36 trainers
+            if(choice == 1)
+            {
+                //deck ratio, 12 energy, 12 pokemon, 36 trainers            
+                System.out.println("You have chosen a premade deck");
+                player.chooseDeck(choice);
+                done = true;
+            }
+            else if(choice == 2)
+            {
+                System.out.println("You have chosen to create your own deck");
+                player.chooseDeck(choice);
+                done = true;
+            }
+            else
+            {
+                System.out.println("Invalid choice");
+            }
         }
-        else if(choice == 2)
-        {
-            System.out.println("You have chosen to create your own deck");
-        }
-        else
-        {
-            System.out.println("Invalid choice");
-        }        
     }
 }
