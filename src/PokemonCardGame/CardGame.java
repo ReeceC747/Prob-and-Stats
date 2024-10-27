@@ -10,13 +10,21 @@ public class CardGame
 
     public void start()
     {
+        Player player1 = new Player("Player 1");
+        Player player2 = new Player("Player 2");
+        deckBuilder(player1);
+        deckBuilder(player2);
+
+
+    }
+
+    private void deckBuilder(Player player)
+    {
         Scanner input = new Scanner(System.in);
-        Player player1 = new Player();
-        Player player2 = new Player();
 
         System.out.println("Game started");
 
-        System.out.println("Player1 Would You like to use a premade deck or create your own?");
+        System.out.println(player.getName() + ", Would You like to use a premade deck or create your own?");
         System.out.println("1. Premade");
         System.out.println("2. Create your own");
 
@@ -34,6 +42,6 @@ public class CardGame
         else
         {
             System.out.println("Invalid choice");
-        }
+        }        
     }
 }

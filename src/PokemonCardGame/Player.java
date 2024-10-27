@@ -1,26 +1,9 @@
 package PokemonCardGame;
 
 import PokemonCardGame.CardTypes.EnergyCards.*;
-import PokemonCardGame.CardTypes.PokemonCards.LightningType.Joltik;
-import PokemonCardGame.CardTypes.PokemonCards.LightningType.Luxio;
-import PokemonCardGame.CardTypes.PokemonCards.LightningType.Luxray;
-import PokemonCardGame.CardTypes.PokemonCards.LightningType.Magnemite;
-import PokemonCardGame.CardTypes.PokemonCards.LightningType.Magneton;
-import PokemonCardGame.CardTypes.PokemonCards.LightningType.Shinx;
-import PokemonCardGame.CardTypes.PokemonCards.MetalType.Bronzong;
-import PokemonCardGame.CardTypes.PokemonCards.MetalType.Bronzor;
-import PokemonCardGame.CardTypes.PokemonCards.MetalType.Cufant;
-import PokemonCardGame.CardTypes.PokemonCards.MetalType.Dialga;
-import PokemonCardGame.CardTypes.PokemonCards.MetalType.Klink;
-import PokemonCardGame.CardTypes.PokemonCards.MetalType.Togedemaru;
-import PokemonCardGame.CardTypes.TrainerCards.BattleCompressor;
-import PokemonCardGame.CardTypes.TrainerCards.EnhancedHammer;
-import PokemonCardGame.CardTypes.TrainerCards.EvolutionIncense;
-import PokemonCardGame.CardTypes.TrainerCards.MetalSaucer;
-import PokemonCardGame.CardTypes.TrainerCards.SpecialCharge;
-import PokemonCardGame.CardTypes.TrainerCards.Switch;
-import PokemonCardGame.CardTypes.TrainerCards.TrainersMail;
-import PokemonCardGame.CardTypes.TrainerCards.UltraBall;
+import PokemonCardGame.CardTypes.PokemonCards.LightningType.*;
+import PokemonCardGame.CardTypes.PokemonCards.MetalType.*;
+import PokemonCardGame.CardTypes.TrainerCards.*;
 
 import java.util.ArrayList;
 import PokemonCardGame.CardTypes.Card;
@@ -29,11 +12,15 @@ public class Player
 {
     private ArrayList<Card> premadeDeck;
     private ArrayList<Card> customDeck;
+    private ArrayList<Card> activeDeck;
+
+    private String name;
     /**
      * Constructor for the Player class, comes with a premade deck
      */
-    public Player()
+    public Player(String nameP)
     {
+        name = nameP;
         premadeDeck();
     }
 
@@ -72,5 +59,16 @@ public class Player
         premadeDeck.add(new Dialga());
         premadeDeck.add(new Klink());
         premadeDeck.add(new Togedemaru());        
+    }
+
+    //Getters and Setters ----------------------------------------------
+    public String getName()
+    {
+        return name;
+    }
+
+    public void setName(String nameP)
+    {
+        name = nameP;
     }
 }
