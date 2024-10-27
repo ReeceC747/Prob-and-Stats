@@ -18,6 +18,7 @@ public class PokemonHand
     //Solution, fill the deck with 60 energy and trainer cards then replace x of them randomly with pokemon cards, maybe in player
     public static void main(String[] args)
     {
+        PokemonHand experiment = new PokemonHand();
         Player player = new Player();
         int runs = 1000;
         Random rng = new Random();
@@ -49,11 +50,12 @@ public class PokemonHand
                 }
                 Collections.shuffle(deck);
 
+                player.setActiveDeck(deck);
                 for(int i = 0; i < 7; i++)
                 {
                     player.drawCard();
                 }
-                if(game.startingHand(deck))
+                if(experiment.hasPokemon(player))
                 {
                     success++;
                 }

@@ -13,7 +13,7 @@ public class Player
     private ArrayList<Card> premadeDeck;
     private ArrayList<Card> customDeck;
     private ArrayList<Card> activeDeck;
-    private ArrayList<Card> hand;
+    private ArrayList<Card> hand = new ArrayList<Card>();
 
     private String name;
 
