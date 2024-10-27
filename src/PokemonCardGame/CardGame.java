@@ -16,7 +16,7 @@ public class CardGame
 
         System.out.println("Game started");
 
-        System.out.println("Would You like to use a premade deck or create your own?");
+        System.out.println("Player1 Would You like to use a premade deck or create your own?");
         System.out.println("1. Premade");
         System.out.println("2. Create your own");
 

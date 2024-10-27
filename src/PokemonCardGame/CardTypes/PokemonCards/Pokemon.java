@@ -1,5 +1,8 @@
 package PokemonCardGame.CardTypes.PokemonCards;
 
-public class Pokemon {
+import PokemonCardGame.CardTypes.Card;
+
+public class Pokemon extends Card 
+{
     
 }

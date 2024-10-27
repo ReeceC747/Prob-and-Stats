@@ -1,6 +1,6 @@
 package PokemonCardGame.CardTypes.PokemonCards.MetalType;
 
-public class Togedemaru 
+public class Togedemaru extends PokemonCardGame.CardTypes.PokemonCards.Pokemon
 {
     /**
      * Togedemaru is a Metal type Pokemon card.
