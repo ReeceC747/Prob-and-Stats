@@ -3,17 +3,22 @@ package MonteCarlo.PokemonChecker;
 import java.util.ArrayList;
 import java.util.Random;
 
-import PokemonCardGame.*;
-
+import PokemonCardGame.CardGame;
+import PokemonCardGame.Player;
+import PokemonCardGame.CardTypes.Card;
+import PokemonCardGame.CardTypes.EnergyCards.Energy;
+import PokemonCardGame.CardTypes.PokemonCards.Pokemon;
+import PokemonCardGame.CardTypes.TrainerCards.Trainer;
 import java.util.Collections;
 
-public class PlayTest 
+
+public class PokemonHand 
 {
     //Problem, find out how to properly shuffle the pokemon cards in the deck without them being most likely at the start
     //Solution, fill the deck with 60 energy and trainer cards then replace x of them randomly with pokemon cards, maybe in player
     public static void main(String[] args)
     {
-        CardGame game = new CardGame();
+        Player player = new Player();
         int runs = 1000;
         Random rng = new Random();
         ArrayList<Double> successRates = new ArrayList<>();
@@ -44,6 +49,10 @@ public class PlayTest
                 }
                 Collections.shuffle(deck);
 
+                for(int i = 0; i < 7; i++)
+                {
+                    player.drawCard();
+                }
                 if(game.startingHand(deck))
                 {
                     success++;
@@ -56,4 +65,19 @@ public class PlayTest
 
         
     }
+
+    private boolean hasPokemon(Player player)
+    {
+        for(Card card : player.getHand())
+        {
+            if(card instanceof Pokemon)
+            {
+                return true;
+            }
+        }
+        return false;
+    }    
 }
+
+
+

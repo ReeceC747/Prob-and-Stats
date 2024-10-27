@@ -2,6 +2,8 @@ package PokemonCardGame;
 
 import java.util.Scanner;
 import java.util.ArrayList;
+import java.util.Random;
+
 import PokemonCardGame.CardTypes.*;
 
 public class CardGame 
@@ -10,13 +12,25 @@ public class CardGame
 
     public void start()
     {
+        Random rand = new Random();
         Player player1 = new Player("Player 1");
         Player player2 = new Player("Player 2");
         deckBuilder(player1);
         deckBuilder(player2);
+        
+        int coinFlip = rand.nextInt(2);
+        if(coinFlip == 0)
+        {
+            System.out.println(player1.getName() + " goes first");
+            player1.setTurn(true);
+        }
+        else
+        {
+            System.out.println(player2.getName() + " goes first");
+            player2.setTurn(true);
+        }
 
         
-
     }
 
     private void deckBuilder(Player player)

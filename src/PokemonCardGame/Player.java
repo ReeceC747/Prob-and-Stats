@@ -13,8 +13,14 @@ public class Player
     private ArrayList<Card> premadeDeck;
     private ArrayList<Card> customDeck;
     private ArrayList<Card> activeDeck;
+    private ArrayList<Card> hand;
 
     private String name;
+
+    public Player()
+    {
+        name = "unknown";
+    }
     /**
      * Constructor for the Player class, comes with a premade deck
      */
@@ -77,6 +83,12 @@ public class Player
         }
     }
 
+    public void drawCard()
+    {
+        hand.add(activeDeck.get(0));
+        activeDeck.remove(0);
+    }
+
 
     //Getters and Setters ----------------------------------------------
     public String getName()
@@ -87,5 +99,25 @@ public class Player
     public void setName(String nameP)
     {
         name = nameP;
+    }
+
+    public ArrayList<Card> getHand()
+    {
+        return hand;
+    }
+
+    public void setHand(ArrayList<Card> handP)
+    {
+        hand = handP;
+    }
+
+    public ArrayList<Card> getActiveDeck()
+    {
+        return activeDeck;
+    }
+
+    public void setActiveDeck(ArrayList<Card> activeDeckP)
+    {
+        activeDeck = activeDeckP;
     }
 }
