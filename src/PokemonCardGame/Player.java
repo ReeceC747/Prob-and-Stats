@@ -7,6 +7,7 @@ import PokemonCardGame.CardTypes.TrainerCards.*;
 
 import java.util.ArrayList;
 import PokemonCardGame.CardTypes.Card;
+import java.util.Collections;
 
 public class Player 
 {
@@ -14,6 +15,7 @@ public class Player
     private ArrayList<Card> customDeck;
     private ArrayList<Card> activeDeck;
     private ArrayList<Card> hand = new ArrayList<Card>();
+    private ArrayList<Card> prizePool = new ArrayList<Card>();
 
     private String name;
 
@@ -89,6 +91,30 @@ public class Player
         activeDeck.remove(0);
     }
 
+    public void mulligan()
+    {
+
+        for(int i = 0; i < hand.size(); i++)
+        {
+            activeDeck.add(hand.get(i));
+            hand.remove(i);
+        }
+        Collections.shuffle(activeDeck);
+        for(int i = 0; i < 7; i++)
+        {
+            drawCard();
+        }
+    }
+
+    public void drawPrizes()
+    {
+        for(int i = 0; i < 6; i++)
+        {
+            prizePool.add(activeDeck.get(0));
+            activeDeck.remove(0);
+        }
+    }
+
 
     //Getters and Setters ----------------------------------------------
     public String getName()
@@ -119,5 +145,15 @@ public class Player
     public void setActiveDeck(ArrayList<Card> activeDeckP)
     {
         activeDeck = activeDeckP;
+    }
+
+    public ArrayList<Card> getPrizePool()
+    {
+        return prizePool;
+    }
+
+    public void setPrizePool(ArrayList<Card> prizePoolP)
+    {
+        prizePool = prizePoolP;
     }
 }
