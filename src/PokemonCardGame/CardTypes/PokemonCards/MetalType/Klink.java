@@ -10,5 +10,9 @@ public class Klink extends PokemonCardGame.CardTypes.PokemonCards.Pokemon
      * resists grass -30
      * retreat: 2 neutral
      */
+    public Klink()
+    {
+        super(0, "Klink");
+    }
     
 }

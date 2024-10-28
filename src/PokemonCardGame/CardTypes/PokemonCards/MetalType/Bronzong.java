@@ -12,4 +12,8 @@ public class Bronzong extends PokemonCardGame.CardTypes.PokemonCards.Pokemon
      * resists grass -30
      * retreat: 3 neutral
      */
+    public Bronzong()
+    {
+        super(1, "Bronzong");
+    }
 }

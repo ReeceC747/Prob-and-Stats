@@ -10,4 +10,8 @@ public class Togedemaru extends PokemonCardGame.CardTypes.PokemonCards.Pokemon
      * resists grass - 30
      * retreat 2 neutral
      */
+    public Togedemaru()
+    {
+        super(0, "Togedemaru");
+    }
 }

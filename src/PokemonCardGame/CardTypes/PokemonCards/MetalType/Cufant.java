@@ -10,4 +10,8 @@ public class Cufant extends PokemonCardGame.CardTypes.PokemonCards.Pokemon
      * resists grass -30
      * retreat: 3 neutral
      */
+    public Cufant()
+    {
+        super(0, "Cufant");
+    }
 }

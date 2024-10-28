@@ -13,4 +13,8 @@ public class Bronzor extends Pokemon
      * resists psychic -20
      * retreat: 1 neutral
      */
+    public Bronzor()
+    {
+        super(0, "Bronzor");
+    }
 }

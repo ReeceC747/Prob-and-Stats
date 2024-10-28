@@ -12,6 +12,10 @@ public class Magnemite extends PokemonCardGame.CardTypes.PokemonCards.Pokemon
      * weak to fighting 2x
      * retreat: 1 neutral
      */
+    public Magnemite()
+    {
+        super(0, "Magnemite");
+    }
 
 }
 

@@ -11,5 +11,9 @@ public class Dialga extends PokemonCardGame.CardTypes.PokemonCards.Pokemon
      * resists grass -30
      * retreat: 2 neutral 
      */
+    public Dialga()
+    {
+        super(0, "Dialga");
+    }
     
 }

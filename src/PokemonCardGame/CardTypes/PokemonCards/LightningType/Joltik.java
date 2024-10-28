@@ -11,4 +11,8 @@ public class Joltik extends PokemonCardGame.CardTypes.PokemonCards.Pokemon
      * weak to fighting 2x
      * retreat: 1 neutral
      */
+    public Joltik()
+    {
+        super(0, "Joltik");
+    }
 }

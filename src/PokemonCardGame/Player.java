@@ -4,6 +4,7 @@ import PokemonCardGame.CardTypes.EnergyCards.*;
 import PokemonCardGame.CardTypes.PokemonCards.LightningType.*;
 import PokemonCardGame.CardTypes.PokemonCards.MetalType.*;
 import PokemonCardGame.CardTypes.TrainerCards.*;
+import PokemonCardGame.CardTypes.PokemonCards.*;
 
 import java.util.ArrayList;
 import PokemonCardGame.CardTypes.Card;
@@ -16,12 +17,14 @@ public class Player
     private ArrayList<Card> activeDeck;
     private ArrayList<Card> hand = new ArrayList<Card>();
     private ArrayList<Card> prizePool = new ArrayList<Card>();
+    private Pokemon activePokemon;
 
     private String name;
 
     public Player()
     {
         name = "unknown";
+        activePokemon = null;
     }
     /**
      * Constructor for the Player class, comes with a premade deck
@@ -29,6 +32,7 @@ public class Player
     public Player(String nameP)
     {
         name = nameP;
+        activePokemon = null;
         premadeDeck();
     }
 
@@ -115,6 +119,22 @@ public class Player
         }
     }
 
+    /**
+     * Checks if the player has a pokemon (basic) in their hand
+     */
+    public boolean hasPokemon()
+    {
+        for(Card card : hand)
+        {
+            if(card instanceof Pokemon && ((Pokemon)card).getStage() == 0)
+            {
+                return true;
+            }
+        }
+        return false;
+    }
+
+
 
     //Getters and Setters ----------------------------------------------
     public String getName()
@@ -155,5 +175,15 @@ public class Player
     public void setPrizePool(ArrayList<Card> prizePoolP)
     {
         prizePool = prizePoolP;
+    }
+
+    public Pokemon getActivePokemon()
+    {
+        return activePokemon;
+    }
+
+    public void setActivePokemon(Pokemon activePokemonP)
+    {
+        activePokemon = activePokemonP;
     }
 }

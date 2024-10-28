@@ -13,4 +13,8 @@ public class Shinx extends PokemonCardGame.CardTypes.PokemonCards.Pokemon
      * resists metal -20
      * retreat: 1 neutral
      */
+    public Shinx()
+    {
+        super(0, "Shinx");
+    }
 }

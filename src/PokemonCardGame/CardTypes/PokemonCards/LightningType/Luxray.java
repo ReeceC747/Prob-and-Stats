@@ -13,4 +13,8 @@ public class Luxray extends PokemonCardGame.CardTypes.PokemonCards.Pokemon
      * weak to fighting 2x
      * retreat: 1 neutral
      */
+    public Luxray()
+    {
+        super(2, "Luxray");
+    }
 }

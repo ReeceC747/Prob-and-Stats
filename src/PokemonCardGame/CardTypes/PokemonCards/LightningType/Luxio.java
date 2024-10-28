@@ -13,4 +13,8 @@ public class Luxio extends PokemonCardGame.CardTypes.PokemonCards.Pokemon
      * resists metal -20
      * retreat: 1 neutral
      */
+    public Luxio()
+    {
+        super(1, "Luxio");
+    }
 }

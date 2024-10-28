@@ -14,4 +14,8 @@ public class Magneton extends PokemonCardGame.CardTypes.PokemonCards.Pokemon
      * weak to fighting 2x
      * retreat: 2 neutral
      */
+    public Magneton()
+    {
+        super(1, "Magneton");
+    }
 }
