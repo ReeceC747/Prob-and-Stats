@@ -50,7 +50,7 @@ public class PokemonHand
                 // Replace pokemonCount cards with pokemon cards, then shuffle the deck
                 for(int k = 0; k < pokemonCount; k++)
                 {
-                    deck.add(new Pokemon());
+                    deck.add(new Pokemon(k, null));
                     deck.remove(0);
                 }
                 Collections.shuffle(deck);

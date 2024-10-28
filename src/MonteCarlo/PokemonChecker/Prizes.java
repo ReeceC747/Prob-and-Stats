@@ -69,7 +69,7 @@ public class Prizes
             // Add 12 pokemon cards
             for(int k = 0; k < 12; k++)
             {
-                deck.add(new Pokemon());
+                deck.add(new Pokemon(k, null));
             }
             // Add numberOfTrainerCards trainer cards
             for(int k = 0; k < numberOfTrainerCards; k++)
@@ -127,7 +127,7 @@ public class Prizes
                 // Replace pokemonCount cards with pokemon cards, then shuffle the deck
                 for(int k = 0; k < 12; k++)
                 {
-                    deck.add(new Pokemon());
+                    deck.add(new Pokemon(k, null));
                 }
                 for(int k = 0; k < trainerCount; k++)
                 {
