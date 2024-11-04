@@ -2,15 +2,16 @@ package PokemonCardGame.CardTypes.EnergyCards;
 
 import PokemonCardGame.Player;
 
-public class MetalEnergy extends PokemonCardGame.CardTypes.EnergyCards.Energy
+public class ElectricEnergy extends PokemonCardGame.CardTypes.EnergyCards.Energy
 {
-    public MetalEnergy(Player ownerP)
+    public ElectricEnergy(Player ownerP)
     {
         super(ownerP);
     }
 
-    public MetalEnergy()
+    public ElectricEnergy()
     {
         super(new Player());
     }
+    
 }

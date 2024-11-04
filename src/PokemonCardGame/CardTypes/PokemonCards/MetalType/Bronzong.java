@@ -1,5 +1,9 @@
 package PokemonCardGame.CardTypes.PokemonCards.MetalType;
 
+import PokemonCardGame.Player;
+import PokemonCardGame.CardTypes.EnergyCards.MetalEnergy;
+import PokemonCardGame.CardTypes.PokemonCards.Pokemon;
+
 public class Bronzong extends PokemonCardGame.CardTypes.PokemonCards.Pokemon
 {
     /**
@@ -12,8 +16,27 @@ public class Bronzong extends PokemonCardGame.CardTypes.PokemonCards.Pokemon
      * resists grass -30
      * retreat: 3 neutral
      */
-    public Bronzong()
+    public Bronzong(Player owner)
     {
-        super(1, "Bronzong");
+        super(1, "Bronzong", 110, owner, new MetalEnergy(), 3);
     }
+
+    @Override
+    public void useMoves(int move, Player opponent)
+    {
+        Pokemon target = opponent.getActivePokemon();
+        if(move == 1)
+        {
+            zenHeadbutt(target);
+        }
+    }
+
+    public void zenHeadbutt(Pokemon target)
+    {
+        target.takeDamage(70);
+    }
+
+    
+
+    
 }

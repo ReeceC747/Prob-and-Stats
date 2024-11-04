@@ -1,5 +1,7 @@
 package PokemonCardGame.CardTypes.PokemonCards.MetalType;
 
+import PokemonCardGame.Player;
+import PokemonCardGame.CardTypes.EnergyCards.MetalEnergy;
 import PokemonCardGame.CardTypes.PokemonCards.Pokemon;
 
 public class Bronzor extends Pokemon
@@ -13,8 +15,23 @@ public class Bronzor extends Pokemon
      * resists psychic -20
      * retreat: 1 neutral
      */
-    public Bronzor()
+    public Bronzor(Player owner)
     {
-        super(0, "Bronzor");
+        super(0, "Bronzor", 50, owner, new MetalEnergy(), 1);
+    }
+
+    @Override
+    public void useMoves(int move, Player opponent)
+    {
+        Pokemon target = opponent.getActivePokemon();
+        if(move == 1)
+        {
+            tackle(target);
+        }
+    }
+
+    public void tackle(Pokemon target)
+    {
+        target.takeDamage(20);
     }
 }
