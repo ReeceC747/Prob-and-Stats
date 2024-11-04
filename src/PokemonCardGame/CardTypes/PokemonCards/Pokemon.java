@@ -45,6 +45,7 @@ public class Pokemon extends Card
             System.out.println(moves.get(i));
         }
         int choice = input.nextInt();
+        input.nextLine();
 
         if(choice - 1 > moves.size() || choice < 1)
         {

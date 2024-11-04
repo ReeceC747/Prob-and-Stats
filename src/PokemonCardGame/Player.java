@@ -170,6 +170,7 @@ public class Player
         {
             prizeClaimable = true;
             int choice = input.nextInt();
+            input.nextLine();
 
             if(choice == 1)
             {
@@ -296,6 +297,7 @@ public class Player
                 }
                 System.out.println("0. Done");
                 int choice = input.nextInt();
+                input.nextLine();
 
                 if(choice - 1 < 0 || choice - 1 >= hand.size())
                 {
@@ -336,6 +338,7 @@ public class Player
         }
 
         int choice = input.nextInt();
+        input.nextLine();
 
         if(choice - 1 < 0 || choice - 1 >= trainers.size())
         {
@@ -378,6 +381,7 @@ public class Player
                 }
 
                 int choice = input.nextInt();
+                input.nextLine();
 
                 if(choice - 1 < 0 || choice - 1 >= indexes.size())
                 {
@@ -393,6 +397,7 @@ public class Player
                     }
 
                     choice = input.nextInt();
+                    input.nextLine();
 
                     if(choice == 1)
                     {
@@ -437,6 +442,7 @@ public class Player
             for(int i = 0; i < activePokemon.getRetreatCost(); i++)
             {
                 int choice = input.nextInt();
+                input.nextLine();
                 discardPile.add(activePokemon.getAttatchedEnergy().get(choice - 1));
                 activePokemon.getAttatchedEnergy().remove(choice - 1);
             }
@@ -451,6 +457,7 @@ public class Player
             }
 
             int choice = input.nextInt();
+            input.nextLine();
 
             activePokemon = bench.get(choice - 1);
             bench.remove(choice - 1);
@@ -476,6 +483,7 @@ public class Player
             }
 
             int choice = input.nextInt();
+            input.nextLine();
 
             if(choice - 1 < 0 || choice - 1 >= pokemon.getAttatchedEnergy().size())
             {

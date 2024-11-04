@@ -65,6 +65,7 @@ public class MetalSaucer extends PokemonCardGame.CardTypes.TrainerCards.Trainer{
                     System.out.println((i + 1) + ". " + benchedMetalPokemon.get(i).getName());
                 }
                 int choice = input.nextInt();
+                input.nextLine();
                 benchedMetalPokemon.get(choice - 1).getAttatchedEnergy().add((Energy) discardPile.get(energyIndex));
                 discardPile.remove(energyIndex);
             }

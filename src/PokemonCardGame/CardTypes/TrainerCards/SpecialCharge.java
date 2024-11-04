@@ -58,6 +58,7 @@ public class SpecialCharge extends PokemonCardGame.CardTypes.TrainerCards.Traine
                 }               
 
                 int choice = input.nextInt();
+                input.nextLine();
 
                 if(choice < 0 || choice > energy.size())
                 {

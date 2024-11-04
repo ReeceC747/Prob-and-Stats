@@ -44,6 +44,7 @@ public class CardGame
                 + player2Mulligans + " extra cards, how many would you like to draw?");
             
             int extraCards = input.nextInt();
+            input.nextLine();
 
             for(int i = 0; i < extraCards; i++)
             {
@@ -56,6 +57,7 @@ public class CardGame
                 + player1Mulligans + " extra cards, how many would you like to draw?");
 
             extraCards = input.nextInt();
+            input.nextLine();
 
             for(int i = 0; i < extraCards; i++)
             {
@@ -78,6 +80,7 @@ public class CardGame
                 + player1Mulligans + " extra cards, how many would you like to draw?");
 
             int extraCards = input.nextInt();
+            input.nextLine();
 
             for(int i = 0; i < extraCards; i++)
             {
@@ -88,6 +91,7 @@ public class CardGame
                 + player2Mulligans + " extra cards, how many would you like to draw?");
 
             extraCards = input.nextInt();
+            input.nextLine();
 
             for(int i = 0; i < extraCards; i++)
             {
@@ -195,6 +199,7 @@ public class CardGame
         }
         
         int choice = input.nextInt();
+        input.nextLine();
 
         //Sets the active pokemon and remove it from the hand
         player.setActivePokemon((Pokemon) player.getHand().get(pokemonIndex.get(choice - 1)));
@@ -224,6 +229,7 @@ public class CardGame
                 
 
                 choice = input.nextInt();
+                input.nextLine();
 
                 //Places the basic pokemon on the bench and removes it from the hand
                 player.getBench().add((Pokemon) player.getHand().get(pokemonIndex.get(choice - 1)));
@@ -253,10 +259,8 @@ public class CardGame
         while(!done)
         {
 
-            if(input.hasNextInt())
-            {
-                choice = input.nextInt();
-            }
+            choice = input.nextInt();
+            input.nextLine();
             if(choice == 1)
             {
                 //deck ratio, 12 energy, 12 pokemon, 36 trainers            

@@ -28,6 +28,7 @@ public class Switch extends PokemonCardGame.CardTypes.TrainerCards.Trainer
         }
 
         int choice = input.nextInt();
+        input.nextLine();
  
         owner.setActivePokemon(owner.getBench().get(choice - 1));
         owner.getBench().add(temp);

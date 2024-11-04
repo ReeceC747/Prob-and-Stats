@@ -54,6 +54,7 @@ public class Dialga extends PokemonCardGame.CardTypes.PokemonCards.Pokemon
                 System.out.println((i + 1) + ": " + discardPile.get(i).getName());
             }
             int choice = input.nextInt();
+            input.nextLine();
 
             getOwner().getHand().add(discardPile.get(choice - 1));
         }

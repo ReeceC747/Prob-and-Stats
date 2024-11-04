@@ -64,6 +64,7 @@ public class Magnemite extends PokemonCardGame.CardTypes.PokemonCards.Pokemon
             System.out.println((i + 1) + ". " + bench.get(i).getName());
         }
         int choice = input.nextInt();
+        input.nextLine();
 
         Pokemon temp = owner.getActivePokemon();
         owner.setActivePokemon(bench.get(choice - 1));

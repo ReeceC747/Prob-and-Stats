@@ -79,6 +79,7 @@ public class Magneton extends PokemonCardGame.CardTypes.PokemonCards.Pokemon
             while(trainersAdded < 2 || choice == 0)
             {
                 choice = input.nextInt();
+                input.nextLine();
                 if(choice < 0 || choice > discard.size())
                 {
                     System.out.println("Invalid choice");

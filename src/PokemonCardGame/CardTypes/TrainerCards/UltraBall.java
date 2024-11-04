@@ -38,6 +38,7 @@ public class UltraBall extends PokemonCardGame.CardTypes.TrainerCards.Trainer
                 }
 
                 int choice = input.nextInt();
+                input.nextLine();
 
                 if(choice < 0 || choice > owner.getHand().size())
                 {
@@ -66,6 +67,7 @@ public class UltraBall extends PokemonCardGame.CardTypes.TrainerCards.Trainer
             } 
 
             int choice = input.nextInt();
+            input.nextLine();
 
             owner.getHand().add(owner.getActiveDeck().get(pokemon.get(choice - 1)));
             owner.getActiveDeck().remove((int)pokemon.get(choice - 1));

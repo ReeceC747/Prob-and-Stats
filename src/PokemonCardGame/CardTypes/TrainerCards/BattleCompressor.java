@@ -35,6 +35,7 @@ public class BattleCompressor extends PokemonCardGame.CardTypes.TrainerCards.Tra
             System.out.println("0: Done");
 
             int choice = input.nextInt();
+            input.nextLine();
 
             if(choice == 0)
             {

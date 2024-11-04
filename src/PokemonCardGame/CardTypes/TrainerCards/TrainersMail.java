@@ -47,6 +47,7 @@ public class TrainersMail extends PokemonCardGame.CardTypes.TrainerCards.Trainer
                 System.out.println((i + 1) + ": " + owner.getActiveDeck().get(indexes.get(i)).getName());
             }
             int choice = input.nextInt();
+            input.nextLine();
 
             owner.getHand().add(owner.getActiveDeck().get(indexes.get(choice - 1)));
             owner.getActiveDeck().remove((int)indexes.get(choice - 1));

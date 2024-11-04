@@ -66,6 +66,7 @@ public class Klink extends PokemonCardGame.CardTypes.PokemonCards.Pokemon
                 System.out.println((i + 1) + ": " + metalPokemon.get(i).getName());
             }
             int choice = input.nextInt();
+            input.nextLine();
             owner.getHand().add(activeDeck.get(indexes.get(choice - 1)));
             activeDeck.remove((int) indexes.get(choice - 1));
         }
