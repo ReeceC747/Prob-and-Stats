@@ -22,7 +22,7 @@ public class TrainersMail extends PokemonCardGame.CardTypes.TrainerCards.Trainer
     {
         Scanner input = new Scanner(System.in);
         ArrayList<Integer> indexes = new ArrayList<>();
-        for(int i = 0; i < 4; i++)
+        for(int i = 0; i < 4; i++) 
         {
             if(owner.getActiveDeck().size() == 0)
             {

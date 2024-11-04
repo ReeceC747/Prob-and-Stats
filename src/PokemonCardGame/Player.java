@@ -247,7 +247,7 @@ public class Player
                 if(prizePool.size() == 0)
                 {
                     System.out.println(name + " has claimed all prize cards");
-                }
+                } 
             }
         }
 

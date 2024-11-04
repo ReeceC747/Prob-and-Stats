@@ -51,7 +51,7 @@ public class EvolutionIncense extends PokemonCardGame.CardTypes.TrainerCards.Tra
             int choice = input.nextInt();
 
             owner.getHand().add(owner.getActiveDeck().get(indexes.get(choice - 1)));
-            owner.getActiveDeck().remove((int)indexes.get(choice - 1));
+            owner.getActiveDeck().remove((int)indexes.get(choice - 1)); 
 
 
 

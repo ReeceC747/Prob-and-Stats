@@ -63,7 +63,7 @@ public class UltraBall extends PokemonCardGame.CardTypes.TrainerCards.Trainer
             for(int i = 0; i < pokemon.size(); i++)
             {
                 System.out.println((i + 1) + ": " + owner.getActiveDeck().get(pokemon.get(i)).getName());
-            }
+            } 
 
             int choice = input.nextInt();
 

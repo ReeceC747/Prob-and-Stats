@@ -22,14 +22,23 @@ public class Magneton extends PokemonCardGame.CardTypes.PokemonCards.Pokemon
      * retreat: 2 neutral
     */
     
+    //scanner for user input
     private Scanner input;
 
-
+    /**
+     * Constructor for Magneton
+     * @param owner
+     */
     public Magneton(Player owner)
     {
         super(1, "Magneton", 90, owner, new ElectricEnergy(), 2);
     }
 
+    /**
+     * Method to use moves
+     * @param move
+     * @param opponent
+     */
     @Override
     public void useMoves(int move, Player opponent)
     {
@@ -44,6 +53,9 @@ public class Magneton extends PokemonCardGame.CardTypes.PokemonCards.Pokemon
         }
     }
     
+    /**
+     * Method to put up to 2 trainer cards from discard pile into your hand
+     */
     public void junkMagnet()
     {
         input = new Scanner(System.in);
@@ -81,6 +93,11 @@ public class Magneton extends PokemonCardGame.CardTypes.PokemonCards.Pokemon
         }
     }
 
+    /**
+     * Method to check if there are trainers in the discard pile
+     * @param discard
+     * @return
+     */
     public ArrayList<Trainer> hasTrainers(ArrayList<Card> discard)
     {
         ArrayList<Trainer> trainers = new ArrayList<Trainer>();
@@ -94,6 +111,10 @@ public class Magneton extends PokemonCardGame.CardTypes.PokemonCards.Pokemon
         return trainers;
     }
 
+    /**
+     * Method to deal 60 damage
+     * @param target
+     */
     public void headBolt(Pokemon target)
     {
         target.takeDamage(60);

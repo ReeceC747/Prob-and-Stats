@@ -16,7 +16,7 @@ public class Klink extends PokemonCardGame.CardTypes.PokemonCards.Pokemon
      * Call for backup (1 metal): search your deck for a metal pokemon and put it into your hand and shuffle the deck
      * weak to fire 2x
      * resists grass -30
-     * retreat: 2 neutral
+     * retreat: 2 neutral 
      */
 
     private Scanner input;

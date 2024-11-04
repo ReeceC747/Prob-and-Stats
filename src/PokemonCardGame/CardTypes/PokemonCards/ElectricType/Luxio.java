@@ -15,11 +15,21 @@ public class Luxio extends PokemonCardGame.CardTypes.PokemonCards.Pokemon
      * resists metal -20
      * retreat: 1 neutral
      */
+
+    /**
+     * Constructor for the Luxio class
+     * @param owner Owner of the pokemon card
+     */
     public Luxio(Player owner)
     {
         super(1, "Luxio", 80, owner, new ElectricEnergy(), 1);
     }
 
+    /**
+     * Function to use the moves of the pokemon
+     * @param move Move to be used
+     * @param opponent Opponent player
+     */
     @Override
     public void useMoves(int move, Player opponent)
     {

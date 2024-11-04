@@ -16,6 +16,11 @@ public class Bronzong extends PokemonCardGame.CardTypes.PokemonCards.Pokemon
      * resists grass -30
      * retreat: 3 neutral
      */
+
+    /**
+     * Constructor for Bronzong
+     * @param owner
+     */
     public Bronzong(Player owner)
     {
         super(1, "Bronzong", 110, owner, new MetalEnergy(), 3);

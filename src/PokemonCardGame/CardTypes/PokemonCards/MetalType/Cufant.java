@@ -14,7 +14,7 @@ public class Cufant extends PokemonCardGame.CardTypes.PokemonCards.Pokemon
      * weak to fire 2x
      * resists grass -30
      * retreat: 3 neutral
-     */
+     */ 
     public Cufant(Player owner)
     {
         super(0, "Cufant", 100, owner, new MetalEnergy(), 3);

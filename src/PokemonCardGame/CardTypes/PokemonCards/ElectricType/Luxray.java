@@ -15,11 +15,18 @@ public class Luxray extends PokemonCardGame.CardTypes.PokemonCards.Pokemon
      * weak to fighting 2x
      * retreat: 1 neutral
      */
+
+    /*
+     * Constructor for Luxray that takes in the player it belongs to
+     */
     public Luxray(Player owner)
     {
         super(2, "Luxray", 150, owner, new ElectricEnergy(), 1);
     }
 
+    /*
+     * Method that uses the moves of Luxray
+     */
     @Override
     public void useMoves(int move, Player opponent)
     {
@@ -30,6 +37,9 @@ public class Luxray extends PokemonCardGame.CardTypes.PokemonCards.Pokemon
         }
     }
 
+    /*
+     * Method that represents the move wild charge
+     */
     public void wildCharge(Pokemon target)
     {
         target.takeDamage(180);

@@ -29,7 +29,7 @@ public class Pokemon extends Card
         paralyzed = false;
         retreatCost = retreatCostP;
     }
-
+ 
     public Pokemon()
     {
         super("Pokemon", new Player());

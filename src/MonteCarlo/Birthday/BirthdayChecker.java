@@ -7,7 +7,7 @@ public class BirthdayChecker
 {
     public double probabilityOfSharedBirthday(int numberOfPeople, int runs)
     {
-        //intialize variables/objects
+        //intialize variables and objects
         Random generator = new Random();
         ArrayList<Person> people;
         int sharedBirthdays = 0;

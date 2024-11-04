@@ -5,7 +5,7 @@ import java.util.Random;
 public class ThreeDoors 
 {
     /**
-     * Plays the game Deal or No Deal without changing doors
+     * Plays the game Deal or No Deal without changing doors 
      */
     public void playDealNoDeal(int games)
     {

@@ -4,6 +4,7 @@ public class BirthdayTester
 {
     public static void main(String[] args)
     {
+        // Test the BirthdayChecker class
         BirthdayChecker bC = new BirthdayChecker();
         int numberOfPeople = 23;
         int runs = 100;

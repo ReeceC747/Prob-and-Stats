@@ -19,7 +19,7 @@ public class Trainer extends PokemonCardGame.CardTypes.Card
     {
         super("Trainer", new Player());
     }
-
+ 
     public void play(Player owner)
     {
         System.out.println("Played " + name);

@@ -17,7 +17,7 @@ public class PokemonHand
     //Solution, fill the deck with 60 energy and trainer cards then replace x of them randomly with pokemon cards, maybe in player
     public static void main(String[] args)
     {
-        //Initalized objects/variables
+        //Initalized objects and variables
         PokemonHand experiment = new PokemonHand();
         int runs = 1000;
         Random rng = new Random();

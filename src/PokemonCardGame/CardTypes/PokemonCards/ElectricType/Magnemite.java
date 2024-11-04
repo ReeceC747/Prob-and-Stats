@@ -20,12 +20,22 @@ public class Magnemite extends PokemonCardGame.CardTypes.PokemonCards.Pokemon
 
     private Scanner input;
 
+    /**
+     * Constructor for Magnemite
+     * @param owner
+     */
     public Magnemite(Player owner)
     {
         super(0, "Magnemite", 60, owner, new ElectricEnergy(), 1);
         input = new Scanner(System.in);
     }
 
+
+    /**
+     * Method to use moves
+     * @param move
+     * @param opponent
+     */
     @Override
     public void useMoves(int move, Player opponent)
     {
@@ -40,6 +50,9 @@ public class Magnemite extends PokemonCardGame.CardTypes.PokemonCards.Pokemon
         }
     }
 
+    /**
+     * Method to switch this pokemon with a benched one
+     */
     public void magneticSwitch()
     {
         //switch this pokemon with a benched one

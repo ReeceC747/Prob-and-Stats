@@ -16,11 +16,21 @@ public class Shinx extends PokemonCardGame.CardTypes.PokemonCards.Pokemon
      * resists metal -20
      * retreat: 1 neutral
      */
+
+    /**
+     * Constructor for Shinx
+     * @param owner
+     */
     public Shinx(Player owner)
     {
         super(0, "Shinx", 60, owner, new ElectricEnergy(), 1);
     }
 
+    /**
+     * Use moves for Shinx
+     * @param move
+     * @param opponent
+     */
     @Override
     public void useMoves(int move, Player opponent)
     {
@@ -35,6 +45,10 @@ public class Shinx extends PokemonCardGame.CardTypes.PokemonCards.Pokemon
         }
     }
 
+    /**
+     * Paralyzing gaze move for Shinx
+     * @param target
+     */
     public void paralyzingGaze(Pokemon target)
     {
         Random rng = new Random();
@@ -44,6 +58,10 @@ public class Shinx extends PokemonCardGame.CardTypes.PokemonCards.Pokemon
         }
     }
 
+    /**
+     * Static shock move for Shinx
+     * @param target
+     */
     public void staticShock(Pokemon target)
     {
         target.takeDamage(30);

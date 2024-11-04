@@ -36,7 +36,7 @@ public class Togedemaru extends PokemonCardGame.CardTypes.PokemonCards.Pokemon
         Random rng = new Random();
         target.takeDamage(10);
         if(rng.nextInt(2) == 0)
-        {
+        { 
             getOwner().setPrizeClaimable(false);
         }
     }

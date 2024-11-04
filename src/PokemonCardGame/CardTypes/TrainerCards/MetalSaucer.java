@@ -19,7 +19,7 @@ public class MetalSaucer extends PokemonCardGame.CardTypes.TrainerCards.Trainer{
         super("Metal Saucer", owner);
     }
 
-    @Override
+    @Override 
     public void play(Player owner)
     {
         Scanner input = new Scanner(System.in);

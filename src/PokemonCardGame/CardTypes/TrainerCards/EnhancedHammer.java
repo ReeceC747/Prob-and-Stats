@@ -14,7 +14,7 @@ public class EnhancedHammer extends PokemonCardGame.CardTypes.TrainerCards.Train
     }
 
     @Override
-    public void play(Player owner)
+    public void play(Player owner) 
     {
         if(owner.getOpponent().getActivePokemon().getAttatchedEnergy().size() == 0)
         {

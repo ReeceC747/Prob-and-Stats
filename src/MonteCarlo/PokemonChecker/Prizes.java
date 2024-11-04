@@ -61,7 +61,7 @@ public class Prizes
         {
             Player player = new Player();
             ArrayList<Card> deck = new ArrayList<>();
-            // Fill deck with 48 - numberOfTrainerCards energy cards
+            // Fill deck with (48 - numberOfTrainerCards) energy cards
             for(int k = 0; k < 48 - numberOfTrainerCards; k++)
             {
                 deck.add(new Energy());

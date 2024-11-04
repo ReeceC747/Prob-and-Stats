@@ -51,7 +51,7 @@ public class BattleCompressor extends PokemonCardGame.CardTypes.TrainerCards.Tra
                 cardsDiscarded++;
             }
         }
-        input.close();
+        input.close(); 
 
         Collections.shuffle(deck);
     }

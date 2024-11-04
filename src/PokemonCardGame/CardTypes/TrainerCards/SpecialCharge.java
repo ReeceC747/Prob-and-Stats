@@ -33,7 +33,7 @@ public class SpecialCharge extends PokemonCardGame.CardTypes.TrainerCards.Traine
             {
                 energy.add(discardPile.get(i));
                 indexes.add(i);
-            }
+            } 
         }
 
         if(energy.size() == 0)

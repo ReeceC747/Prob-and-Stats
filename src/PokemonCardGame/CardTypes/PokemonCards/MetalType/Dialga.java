@@ -33,7 +33,7 @@ public class Dialga extends PokemonCardGame.CardTypes.PokemonCards.Pokemon
     {
         Pokemon target = opponent.getActivePokemon();
         if(move == 1)
-        {
+        { 
             temporalBackflow();
         }
         else if(move == 2)

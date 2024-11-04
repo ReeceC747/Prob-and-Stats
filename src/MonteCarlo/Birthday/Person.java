@@ -11,7 +11,10 @@ public class Person
        birthday = birthdayP;
     }
 
-    // Returns the birthday of the person
+    /**
+     * Get the birthday of the person
+     * @return
+     */
     public int getBirthday()
     {
         return birthday;

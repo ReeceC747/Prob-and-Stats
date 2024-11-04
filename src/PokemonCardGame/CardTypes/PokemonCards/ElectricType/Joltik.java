@@ -14,6 +14,11 @@ public class Joltik extends PokemonCardGame.CardTypes.PokemonCards.Pokemon
      * weak to fighting 2x
      * retreat: 1 neutral
      */
+
+    /**
+     * Constructor for Joltik
+     * @param owner Owner of the card
+     */
     public Joltik(Player owner)
     {
 
@@ -21,6 +26,10 @@ public class Joltik extends PokemonCardGame.CardTypes.PokemonCards.Pokemon
         moves.add("1. 1 Electric: Flail Around: Flip 3 coins, do 10 damage for each one that lands heads");
     }
 
+    /**
+     * Flail around move for Joltik
+     * @param target Pokemon to attack
+     */
     public void flailAround(Pokemon target)
     {
         Random rng = new Random();
@@ -35,6 +44,11 @@ public class Joltik extends PokemonCardGame.CardTypes.PokemonCards.Pokemon
         target.takeDamage(damage);
     }
 
+    /**
+     * Use moves for Joltik
+     * @param move Move to use
+     * @param opponent Opponent to attack
+     */
     @Override
     public void useMoves(int move, Player opponent)
     {
