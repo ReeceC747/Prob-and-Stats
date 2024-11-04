@@ -10,8 +10,7 @@ public class ElectricEnergy extends PokemonCardGame.CardTypes.EnergyCards.Energy
      */
     public ElectricEnergy(Player ownerP)
     {
-        super(ownerP);
-        setName("Electric Energy");
+        super(ownerP, "Electric Energy");
     }
 
     /**
@@ -19,7 +18,7 @@ public class ElectricEnergy extends PokemonCardGame.CardTypes.EnergyCards.Energy
      */
     public ElectricEnergy()
     {
-        super(new Player());
+        super(new Player(), "Electric Energy");
     }
     
 }

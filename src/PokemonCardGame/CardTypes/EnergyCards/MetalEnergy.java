@@ -11,8 +11,7 @@ public class MetalEnergy extends PokemonCardGame.CardTypes.EnergyCards.Energy
      */
     public MetalEnergy(Player ownerP)
     {
-        super(ownerP);
-        setName("Metal Energy");
+        super(ownerP, "Metal Energy");
     }
 
     /**
@@ -20,6 +19,6 @@ public class MetalEnergy extends PokemonCardGame.CardTypes.EnergyCards.Energy
      */
     public MetalEnergy()
     {
-        super(new Player());
+        super(new Player(), "Metal Energy");
     }
 }

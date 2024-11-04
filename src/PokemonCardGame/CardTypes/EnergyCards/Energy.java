@@ -11,9 +11,9 @@ public class Energy extends PokemonCardGame.CardTypes.Card
      * Constructor for Energy
      * @param ownerP
      */
-    public Energy(Player ownerP)
+    public Energy(Player ownerP, String nameP)
     {
-        super("Energy", ownerP);
+        super(nameP, ownerP);
     }
 
     /**
