@@ -12,6 +12,7 @@ public class MetalEnergy extends PokemonCardGame.CardTypes.EnergyCards.Energy
     public MetalEnergy(Player ownerP)
     {
         super(ownerP);
+        setName("Metal Energy");
     }
 
     /**

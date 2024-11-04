@@ -11,6 +11,7 @@ public class ElectricEnergy extends PokemonCardGame.CardTypes.EnergyCards.Energy
     public ElectricEnergy(Player ownerP)
     {
         super(ownerP);
+        setName("Electric Energy");
     }
 
     /**
