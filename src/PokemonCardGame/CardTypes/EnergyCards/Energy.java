@@ -4,8 +4,6 @@ import PokemonCardGame.Player;
 
 public class Energy extends PokemonCardGame.CardTypes.Card
 {
-    //name of the energy card
-    private String name;
 
     /**
      * Constructor for Energy
@@ -23,17 +21,4 @@ public class Energy extends PokemonCardGame.CardTypes.Card
     {
         super("Energy", new Player());
     }
-
-//Getters and Setters --------------------------------------------
-
-    public String getName()
-    {
-        return name;
-    }
-
-    public void setName(String nameP)
-    {
-        name = nameP;
-    }
-    
 }
