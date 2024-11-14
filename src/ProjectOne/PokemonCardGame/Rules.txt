@@ -1,0 +1,44 @@
+60 card decks
+Max 4 of each card(ingore for energy)
+average spread is 12 pokemon, 12 energy, 36 trainers
+
+Setup
+Flip a coin to see who goes first
+Draw 7 cards, then draw 6 prize cards
+When you defeat an enemy pokemon, draw a prize card (Drawing all 6 cards wins the game)
+Place 1 pokemon (basic) in active space
+then up to 5 (basic) more in the bench
+if you dont have any pokemon cards in your hand you can shuffle your hand and draw 7 (repeatable), each time your opponent draws a card (ignore)
+
+game
+Start of turn Draw a card (lose if you draw out)
+
+2nd phase
+play any number of pokemon to the bench up to 5
+attatch one energy card to active or benched pokemon
+Evolve a pokemon by placing the evolved form over the previous evo form
+play any number of trainer Cards (you are limited to one stadium or supporter per turn but well see how it goes)
+swap active with bench by paying actives retreat cost
+use any number of abilities listed on the pokemon card
+
+Attacking
+make one attack if you have the energy requirement (there are neutral types which can be filled by any type)
+do not discard energy on attack unless specified, attack is then dished to opposing pokemon
+when hp <= 0 it goes to the discard pile and it gets replaced by one from the bench (if unable they lose the game)
+pokemon have weaknesses and resistances (2x damage or halved)
+
+Evolution
+cant skip stages unless specified
+cant evolve a pokemon the same turn it was played
+conditions fade, but damage and energy stay
+can only use the current stages attacks and abilities
+
+
+WHATS DONE SO FAR
+check where left off in Playtest and follow the trail
+
+Types of win conditions
+You draw all your prizes (You win), rather check how many of your pokemon have fainted (if you get to 6 that means the opponent killed 6 of yours so 
+they drew all their prize cards)
+You draw a card from an empty deck (You Lose)
+After your active pokemon is 
