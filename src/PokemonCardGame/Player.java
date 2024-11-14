@@ -30,6 +30,7 @@ public class Player
     private boolean canPlayEnergy = true;
     private boolean canRetreat = true;
     private boolean prizeClaimable = true;
+    private Scanner input = new Scanner(System.in);
 
     public Player()
     {
@@ -154,7 +155,6 @@ public class Player
 
     public void turn(Player opponent)
     {
-        Scanner input = new Scanner(System.in);
         boolean done = false;
         System.out.println("its " + name + "'s turn\n" +
         "1. Moves (" + getActivePokemon().getName() + ")\n" +
@@ -166,10 +166,14 @@ public class Player
         "7. Retreat\n" +
         "0. End Turn");
 
+        prizeClaimable = true;
         while(!done)
         {
-            prizeClaimable = true;
-            int choice = input.nextInt();
+            int choice = 0;
+            if (input.hasNextInt()) 
+            {
+                choice = input.nextInt();
+            }
             input.nextLine();
 
             if(choice == 1)
@@ -228,7 +232,6 @@ public class Player
                 System.out.println("Invalid choice");
             }
         }
-        input.close();
         canPlayTrainer = true;
         canPlayEnergy = true;
         canRetreat = true;
@@ -251,7 +254,6 @@ public class Player
                 } 
             }
         }
-
     }
 
     public void Moves(Player opponent)
@@ -277,7 +279,7 @@ public class Player
 
     public void playPokemon()
     {
-        Scanner input = new Scanner(System.in);
+    
         boolean done = false;
         if(bench.size() >= 5)
         {
@@ -296,7 +298,11 @@ public class Player
                     }
                 }
                 System.out.println("0. Done");
-                int choice = input.nextInt();
+                int choice = 0;
+                if (input.hasNextInt()) 
+                {
+                    choice = input.nextInt();
+                }
                 input.nextLine();
 
                 if(choice - 1 < 0 || choice - 1 >= hand.size())
@@ -315,12 +321,12 @@ public class Player
                 }
             }
         }
-        input.close();
+
     }
 
     public void playTrainer()
     {
-        Scanner input = new Scanner(System.in);
+    
         ArrayList<Card> trainers = new ArrayList<>();
         ArrayList<Integer> indexes = new ArrayList<>();
         System.out.println("Select a trainer card to play");
@@ -337,7 +343,11 @@ public class Player
             System.out.println((i + 1) + ". " + trainers.get(i).getName());
         }
 
-        int choice = input.nextInt();
+        int choice = 0;
+        if (input.hasNextInt()) 
+        {
+            choice = input.nextInt();
+        }
         input.nextLine();
 
         if(choice - 1 < 0 || choice - 1 >= trainers.size())
@@ -351,14 +361,14 @@ public class Player
             card.play(player);
             discardPile.add(card);
         }
-        input.close();
+
     }
 
     public void playEnergy()
     {
+    
         if(canPlayEnergy)
         {
-            Scanner input = new Scanner(System.in);
             ArrayList<Integer> indexes = new ArrayList<>();
             for(int i = 0; i < hand.size(); i++)
             {
@@ -380,7 +390,11 @@ public class Player
                     System.out.println((i + 1) + ". " + hand.get(indexes.get(i)).getName());
                 }
 
-                int choice = input.nextInt();
+                int choice = 0;
+                if (input.hasNextInt()) 
+                {
+                    choice = input.nextInt();
+                }
                 input.nextLine();
 
                 if(choice - 1 < 0 || choice - 1 >= indexes.size())
@@ -396,7 +410,11 @@ public class Player
                         System.out.println((i + 2) + ". " + bench.get(i).getName());
                     }
 
-                    choice = input.nextInt();
+
+                    if (input.hasNextInt()) 
+                    {
+                        choice = input.nextInt();
+                    }
                     input.nextLine();
 
                     if(choice == 1)
@@ -416,13 +434,12 @@ public class Player
                 }
 
             }
-            input.close();
         }
     }
 
     public void reteat()
     {
-        Scanner input = new Scanner(System.in);
+        
         if(activePokemon.getRetreatCost() > activePokemon.getAttatchedEnergy().size())
         {
             System.out.println("Not enough energy to retreat");
@@ -441,7 +458,11 @@ public class Player
 
             for(int i = 0; i < activePokemon.getRetreatCost(); i++)
             {
-                int choice = input.nextInt();
+                int choice = 0;
+                if (input.hasNextInt()) 
+                {
+                    choice = input.nextInt();
+                }
                 input.nextLine();
                 discardPile.add(activePokemon.getAttatchedEnergy().get(choice - 1));
                 activePokemon.getAttatchedEnergy().remove(choice - 1);
@@ -456,33 +477,40 @@ public class Player
                 System.out.println((i + 1) + ". " + bench.get(i).getName());
             }
 
-            int choice = input.nextInt();
+            int choice = 0;
+            if (input.hasNextInt()) 
+            {
+                choice = input.nextInt();
+            }
             input.nextLine();
 
             activePokemon = bench.get(choice - 1);
             bench.remove(choice - 1);
             bench.add(temp);
         }
-        input.close();
 
     }
 
     public void discardEnergy(Pokemon pokemon)
     {
+        
         if(pokemon.getAttatchedEnergy().size() == 0)
         {
             System.out.println("No energy cards to discard");
         }
         else
         {
-            Scanner input = new Scanner(System.in);
             System.out.println("Select an energy card to discard");
             for(int i = 0; i < pokemon.getAttatchedEnergy().size(); i++)
             {
                 System.out.println((i + 1) + ". " + pokemon.getAttatchedEnergy().get(i).getName());
             }
 
-            int choice = input.nextInt();
+            int choice = 0;
+            if (input.hasNextInt()) 
+            {
+                choice = input.nextInt();
+            }
             input.nextLine();
 
             if(choice - 1 < 0 || choice - 1 >= pokemon.getAttatchedEnergy().size())
@@ -494,7 +522,6 @@ public class Player
                 discardPile.add(pokemon.getAttatchedEnergy().get(choice - 1));
                 pokemon.getAttatchedEnergy().remove(choice - 1);
             }
-            input.close();
         }
 
     }

@@ -36,3 +36,9 @@ can only use the current stages attacks and abilities
 
 WHATS DONE SO FAR
 check where left off in Playtest and follow the trail
+
+Types of win conditions
+You draw all your prizes (You win), rather check how many of your pokemon have fainted (if you get to 6 that means the opponent killed 6 of yours so 
+they drew all their prize cards)
+You draw a card from an empty deck (You Lose)
+After your active pokemon is 
