@@ -11,5 +11,5 @@ public class PlotterTest
         Plotter plot = new Plotter();
         plot.makeCSV(eq.dataPoints(100), "dataFour.csv");
     }
-    
+    //chamges
 }
