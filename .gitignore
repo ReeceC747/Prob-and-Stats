@@ -3,3 +3,6 @@
 
 #Ignore .csv files
 *.csv
+
+#Ignore .xlsx files
+*.xlsx
