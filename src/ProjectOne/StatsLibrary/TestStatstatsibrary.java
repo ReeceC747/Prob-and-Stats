@@ -14,9 +14,9 @@ public class TestStatstatsibrary
         StatsLibrary stats = new StatsLibrary();
 
         //Empty ArrayLists of numbers
-        ArrayList<Integer> listOfNumbersOne = new ArrayList<>(Arrays.asList(23, 45, 67, 89, 12, 34, 56, 78, 90, 23));
-        ArrayList<Integer> listOfNumbersTwo = new ArrayList<>(Arrays.asList(15, 37, 62, 84, 19, 31, 54, 76, 98, 21));
-        ArrayList<Integer> groupSizes = new ArrayList<>(Arrays.asList(3, 4, 5, 6, 3));
+        ArrayList<Double> listOfNumbersOne = new ArrayList<>(Arrays.asList(23.0, 45.0, 67.0, 89.0, 12.0, 34.0, 56.0, 78.0, 90.0, 23.0));
+        ArrayList<Double> listOfNumbersTwo = new ArrayList<>(Arrays.asList(15.0, 37.0, 62.0, 84.0, 19.0, 31.0, 54.0, 76.0, 98.0, 21.0));
+        ArrayList<Double> groupSizes = new ArrayList<>(Arrays.asList(3.0, 4.0, 5.0, 6.0, 3.0));
 
         int distinctObjects = 21;
         int takenAtATime = 4;

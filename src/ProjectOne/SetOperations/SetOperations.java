@@ -10,7 +10,7 @@ public class SetOperations {
      * @param setTwo
      * @return The union of two sets
      */
-    public ArrayList<Integer> union(ArrayList<Integer> setOne, ArrayList<Integer> setTwo) {
+    public ArrayList<Double> union(ArrayList<Double> setOne, ArrayList<Double> setTwo) {
         // Check if either setOne or setTwo is not a set
         if (!isSet(setOne) || !isSet(setTwo)) 
         {
@@ -21,7 +21,7 @@ public class SetOperations {
         QuickSort qS = new QuickSort();
 
         // Initializes the unioned set
-        ArrayList<Integer> unionedSet = new ArrayList<>();
+        ArrayList<Double> unionedSet = new ArrayList<>();
 
         // Adds all the elements of the two sets to the unioned set
         for (int i = 0; i < setOne.size(); i++) {
@@ -51,14 +51,14 @@ public class SetOperations {
      * @param setTwo
      * @return The intersection of two sets
      */
-    public ArrayList<Integer> intersection(ArrayList<Integer> setOne, ArrayList<Integer> setTwo) {
+    public ArrayList<Double> intersection(ArrayList<Double> setOne, ArrayList<Double> setTwo) {
         // Check if either setOne or setTwo is not a set
         if (!isSet(setOne) || !isSet(setTwo)) 
         {
             return null;
         }
 
-        ArrayList<Integer> intersectionSet = new ArrayList<>();
+        ArrayList<Double> intersectionSet = new ArrayList<>();
 
         for (int i = 0; i < setOne.size(); i++) {
             if (setTwo.contains(setOne.get(i))) {
@@ -75,14 +75,14 @@ public class SetOperations {
      * @param setTwo
      * @return The difference of two sets
      */
-    public ArrayList<Integer> difference(ArrayList<Integer> setOne, ArrayList<Integer> setTwo) {
+    public ArrayList<Double> difference(ArrayList<Double> setOne, ArrayList<Double> setTwo) {
         // Check if either setOne or setTwo is not a set
         if (!isSet(setOne) || !isSet(setTwo)) 
         {
             return null;
         }
 
-        ArrayList<Integer> differenceSet = new ArrayList<>(setOne);
+        ArrayList<Double> differenceSet = new ArrayList<>(setOne);
 
         for (int i = 0; i < setTwo.size(); i++) {
             differenceSet.remove(setTwo.get(i));
@@ -97,14 +97,14 @@ public class SetOperations {
      * @param set
      * @return The complement of the set
      */
-    public ArrayList<Integer> complement(ArrayList<Integer> universalSet, ArrayList<Integer> set) {
+    public ArrayList<Double> complement(ArrayList<Double> universalSet, ArrayList<Double> set) {
         // Check if either universalSet or set is not a set
         if (!isSet(universalSet) || !isSet(set)) 
         {
             return null;
         }
 
-        ArrayList<Integer> complementSet = new ArrayList<>(universalSet);
+        ArrayList<Double> complementSet = new ArrayList<>(universalSet);
 
         for (int i = 0; i < set.size(); i++) {
             complementSet.remove(set.get(i));
@@ -114,7 +114,7 @@ public class SetOperations {
     }
 
     // Assuming isSet method is defined somewhere in this class
-    public boolean isSet(ArrayList<Integer> list) {
+    public boolean isSet(ArrayList<Double> list) {
         // Implementation of isSet method
         return true; // Placeholder
     }

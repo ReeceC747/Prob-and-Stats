@@ -11,13 +11,13 @@ public class StatsLibrary
      * @return 
      * The method adds up all the elements and divides them by the number of elements to get the mean
      */
-    public double findMean(ArrayList<Integer> listOfNumbers) 
+    public double findMean(ArrayList<Double> listOfNumbers) 
     {
         //Initial variables
-        int sum = 0;
+        double sum = 0;
 
         //gets the sum of all the numbers in the Array
-        for(int numberInList : listOfNumbers)
+        for(double numberInList : listOfNumbers)
         {
             sum = sum + numberInList;
         }
@@ -34,7 +34,7 @@ public class StatsLibrary
      * If it is even it will take the two elements in the middle of the array list and divide them to get the median. 
      * If the size is odd it will get the center most element and return that
      */
-    public double findMedian(ArrayList<Integer> listOfNumbers) 
+    public double findMedian(ArrayList<Double> listOfNumbers) 
     {
         //inital variables
         QuickSort sort = new QuickSort();
@@ -46,8 +46,8 @@ public class StatsLibrary
         if(size % 2 == 0 )
         {
             //the two middle elements
-            int lowerHalf = listOfNumbers.get(size / 2);
-            int upperHalf = listOfNumbers.get((size / 2) + 1);
+            double lowerHalf = listOfNumbers.get(size / 2);
+            double upperHalf = listOfNumbers.get((size / 2) + 1);
 
             //gets the median by 
             median = (upperHalf + lowerHalf) / (double) 2;
@@ -69,7 +69,7 @@ public class StatsLibrary
      * @param listOfNumbers
      * @return The number with the most occurences or -1 if there are none
      */
-    public int findMode(ArrayList<Integer> listOfNumbers)
+    public double findMode(ArrayList<Double> listOfNumbers)
     {
         int size = listOfNumbers.size();
         QuickSort sort = new QuickSort();
@@ -77,7 +77,7 @@ public class StatsLibrary
 
         boolean modeExist = true;
         int mostOccurences = 0;
-        int biggestMode = 0;
+        double biggestMode = 0;
         int count = 0;
         
         //For each number in the array besides the last
@@ -147,7 +147,23 @@ public class StatsLibrary
         }
     }
 
-    public double findStandardDeviation(ArrayList<Integer> listOfNumbers)    
+    public double findVariance(ArrayList<Double> listOfNumbers)
+    {
+        double mean = findMean(listOfNumbers);
+        double sum = 0;
+        double variance = 0;
+
+        for(int i = 0; i < listOfNumbers.size(); i++)
+        {
+            sum = sum + Math.pow(listOfNumbers.get(i) - mean, 2);
+        }
+
+        variance = sum / (listOfNumbers.size() - 1);
+
+        return variance;
+    }
+
+    public double findStandardDeviation(ArrayList<Double> listOfNumbers)    
     {
         double mean = findMean(listOfNumbers);
         Double[] deviations = new Double[listOfNumbers.size()];
@@ -179,7 +195,7 @@ public class StatsLibrary
      * @param listTwo
      * @return the number of pairs if you were to pair each element in listOne with each element in listTwo
      */
-    public int mnSize(ArrayList<Integer> listOne, ArrayList<Integer> listTwo)
+    public int mnSize(ArrayList<Double> listOne, ArrayList<Double> listTwo)
     {
         //Initial variables
         SetOperations setOp = new SetOperations();
@@ -214,9 +230,9 @@ public class StatsLibrary
      * @param listOfGroupSizes
      * @return the number of ways you can partition n distinct items into groups of sizes specified in the list
      */
-    public double partition(int numberOfDistinctItems, ArrayList<Integer> listOfGroupSizes)
+    public double partition(int numberOfDistinctItems, ArrayList<Double> listOfGroupSizes)
     {
-        int groupSizeSum = 0;
+        double groupSizeSum = 0;
         for(int i = 0; i < listOfGroupSizes.size(); i++)
         {
             groupSizeSum = groupSizeSum - listOfGroupSizes.get(i);

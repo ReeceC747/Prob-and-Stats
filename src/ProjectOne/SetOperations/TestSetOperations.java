@@ -6,21 +6,21 @@ public class TestSetOperations
 {
     public static void main(String[]args)
     {
-        ArrayList<Integer> set = new ArrayList<>();
-        ArrayList<Integer> subsetOne = new ArrayList<>();
-        ArrayList<Integer> subsetTwo = new ArrayList<>();
+        ArrayList<Double> set = new ArrayList<>();
+        ArrayList<Double> subsetOne = new ArrayList<>();
+        ArrayList<Double> subsetTwo = new ArrayList<>();
         Random generator = new Random();
         SetOperations setOp = new SetOperations();
 
         //Fills the set and subsets with random numbers
-        for(int i = 0; i < 10; i++)
+        for(double i = 0; i < 10; i++)
         {
             set.add(i);
         }
         for(int i = 0; i < 10; i++)
         {
-            subsetOne.add(generator.nextInt(100));
-            subsetTwo.add(generator.nextInt(100));
+            subsetOne.add(generator.nextDouble(100));
+            subsetTwo.add(generator.nextDouble(100));
         }
 
         //Tests union

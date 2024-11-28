@@ -8,14 +8,14 @@ public class QuickSort
      * @param unsortedArrayList
      * @return sorted array list
      */    
-    public ArrayList<Integer> quickSort(ArrayList<Integer> unsortedArrayList)
+    public ArrayList<Double> quickSort(ArrayList<Double> unsortedArrayList)
     {
 
     {
 
         ///initial variables
         int size = unsortedArrayList.size();
-        int pivot = unsortedArrayList.get(size - 1);
+        double pivot = unsortedArrayList.get(size - 1);
         int position = 0;
 
         //Places numbers smaller than the pivot to the left of it
@@ -23,8 +23,8 @@ public class QuickSort
         {
             if(unsortedArrayList.get(i) < pivot && i != position)
             {
-                int tempI = unsortedArrayList.get(i);
-                int tempPos = unsortedArrayList.get(position);
+                double tempI = unsortedArrayList.get(i);
+                double tempPos = unsortedArrayList.get(position);
                 unsortedArrayList.remove(position);
                 unsortedArrayList.add(position, tempI);
                 unsortedArrayList.remove(i);
@@ -41,14 +41,14 @@ public class QuickSort
         * swaps the pivot with the element in "position" so that all elements to the left of the pivot are smaller and those to
         * the right are equal to or greater than the pivot
         */
-        int temp = unsortedArrayList.get(position);
+        double temp = unsortedArrayList.get(position);
         unsortedArrayList.remove(position);
         unsortedArrayList.add(position, pivot);
         unsortedArrayList.remove(size - 1);
         unsortedArrayList.add(size - 1, temp);
 
-        ArrayList<Integer> left = new ArrayList<>();
-        ArrayList<Integer> right = new ArrayList<>();
+        ArrayList<Double> left = new ArrayList<>();
+        ArrayList<Double> right = new ArrayList<>();
 
 
         //Fills left and right arraylists with respective halves of the unsorted one
@@ -73,7 +73,7 @@ public class QuickSort
 
 
         //new sorted array
-        ArrayList<Integer> sortedArray = new ArrayList<>();
+        ArrayList<Double> sortedArray = new ArrayList<>();
 
         //add in sorted elements from least to greatest that are smaller than the pivot
         for(int i = 0; i < left.size(); i++)
