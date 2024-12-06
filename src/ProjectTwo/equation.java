@@ -52,18 +52,7 @@ public class equation
             dataPoints.add(point);
             x += interval;
         }
-
-        Double[] lastPoint = dataPoints.get(dataPoints.size() - 1);
-        if(lastPoint[0] != upperBound)
-        {
-            Double[] upperBoundPoint = new Double[2];
-            upperBoundPoint[0] = upperBound;
-            upperBoundPoint[1] = solveForY(upperBound);
-            dataPoints.add(upperBoundPoint);
-        }
-
-
-
+        
         return dataPoints;
     }
 

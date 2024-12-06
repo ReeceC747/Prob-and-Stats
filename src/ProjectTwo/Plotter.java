@@ -11,6 +11,7 @@ import java.util.Scanner;
 
 import StatsLibrary.StatsLibrary;
 
+
 /**
  * This class will be used to make CSV files with given data points
  */
@@ -25,10 +26,11 @@ public class Plotter
      * @param dataPoints
      * @param fileName
      */
-    public void makeCSV(ArrayList<Double[]> dataPoints, String fileName)
+    public File makeCSV(ArrayList<Double[]> dataPoints, String fileName)
     {
         //try to make a printWriter object with the given file name
-        try(PrintWriter writer = new PrintWriter(new FileWriter(fileName)))
+        File file = new File(fileName);
+        try(PrintWriter writer = new PrintWriter(file))
         {
             //The header of the csv file (x and y coordinates)
             writer.println("x,y"); //header
@@ -38,13 +40,13 @@ public class Plotter
                 writer.println(point[0] + "," + point[1]);
             }
         }
-
-
         //If the file cannot be found, print the stack trace
         catch (IOException e)
         {
             e.printStackTrace();
         }
+
+        return file;
     }
 
     /**
@@ -60,10 +62,11 @@ public class Plotter
             ArrayList<Double[]> dataPoints = new ArrayList<>();
             while(scan.hasNext())
             {
-                if(!scan.nextLine().equals("x,y"))
+            String line = scan.nextLine();
+                if(!line.equals("x,y"))
                 {
                     Double[] point = new Double[2];
-                    String[] parts = scan.nextLine().split(",");
+                    String[] parts = line.split(",");
                     point[0] = Double.parseDouble(parts[0]); //x value
                     point[1] = Double.parseDouble(parts[1]); //y value
                     dataPoints.add(point);
@@ -78,10 +81,11 @@ public class Plotter
      * This method will salt the data of a given csv file, it will use the varaince of the data set as the bounds for randomly generated numbers to
      * add or subtract from the data points
      * @param csv
-          * @throws IOException 
-          */
-         public void saltData(File csv, String saltedFileName) throws IOException
+     * @throws IOException 
+     */
+    public File saltData(File csv, String saltedFileName) throws IOException
     {
+        File saltedFile = new File(saltedFileName);
         try(Scanner scan = new Scanner(csv))
         {
             ArrayList<String> points = new ArrayList<>();
@@ -91,7 +95,6 @@ public class Plotter
                 points.add(scan.nextLine());
             }
 
-            //get the mean and subrtract it from each data point, square it, add up all the results and divide by the number of data points - 1
             StatsLibrary stats = new StatsLibrary();
 
             ArrayList<Double[]> dataPoints = makeDataPoints(csv);
@@ -104,7 +107,7 @@ public class Plotter
 
             double variance = stats.findVariance(yValues);
 
-            try(PrintWriter writer = new PrintWriter(new FileWriter(saltedFileName)))
+            try(PrintWriter writer = new PrintWriter(saltedFile))
             {
                 writer.println("x,y"); //header
                 for(String point : points)
@@ -120,13 +123,63 @@ public class Plotter
                     writer.println(x + "," + (y + salt));
                 }
             }
-
-
-
-
-
-
         }
+        return saltedFile;
+    }
+
+    /**
+     * Makes a new csv file by smoothing the data values in the given csv by taking the average of current and the the three points 
+     * before and after it
+     * @param csv
+     * @param smoothedFileName
+     * @throws IOException
+     */
+    public File smoothData(File csv, String smoothedFileName) throws IOException
+    {
+        ArrayList<Double[]> data = makeDataPoints(csv);
+
+        File smoothedFile;;
+
+        for(int i = 1; i < data.size(); i++)
+        {
+            smoothPoint(data, i);
+        }
+
+        try(Scanner scan = new Scanner(csv))
+        {
+            smoothedFile = makeCSV(data, smoothedFileName);
+        }
+        catch(FileNotFoundException e)
+        {
+            smoothedFile = new File(smoothedFileName);
+            e.printStackTrace();
+        }
+        return smoothedFile;
+    }
+
+    /**
+     * This method will smooth a point by averaging it with the three points before and after it (including the current one)
+     * @param dataSet
+     * @param index
+     */
+    private void smoothPoint(ArrayList<Double[]> dataSet, int index)
+    {
+        double sum = 0;
+        double count = 0;
+        for(int i = index - 3; i < index + 4; i++)
+        {
+            
+            try
+            {
+                sum += dataSet.get(i)[1];
+                count++;
+            }
+            catch(IndexOutOfBoundsException e)
+            {
+                continue;
+            }
+        }
+        dataSet.get(index)[1] = sum / count;
     }
 
 
