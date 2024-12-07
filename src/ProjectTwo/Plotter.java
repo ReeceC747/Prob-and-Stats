@@ -105,7 +105,7 @@ public class Plotter
                 yValues.add(point[1]);
             }
 
-            double variance = stats.findVariance(yValues);
+            double standardDeviation = stats.findStandardDeviation(yValues);
 
             try(PrintWriter writer = new PrintWriter(saltedFile))
             {
@@ -119,7 +119,7 @@ public class Plotter
                     String[] parts = point.split(",");
                     double x = Double.parseDouble(parts[0]);
                     double y = Double.parseDouble(parts[1]);
-                    double salt = (generator.nextDouble() * 2 * variance) - variance;
+                    double salt = (generator.nextDouble() * 2 * standardDeviation) - standardDeviation;
                     writer.println(x + "," + (y + salt));
                 }
             }
