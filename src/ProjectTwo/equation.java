@@ -35,15 +35,18 @@ public class equation
      */
     public ArrayList<Double[]> dataPoints(int numberOfPoints)
     {
+        //If the number of point s is less than or equal to 2, throw an exception
         if(numberOfPoints <= 2)
         {
             throw new IllegalArgumentException("Number of points must be greater than 2");
         }
+
         ArrayList<Double[]> dataPoints = new ArrayList<>();
+        //distance between each point
         double interval = (upperBound - lowerBound) / (numberOfPoints - 1);
         double x = lowerBound;
 
-
+        //for how ever many points, make an array of an x and y value and add it to the arraylist, then increment x by the interval
         for (int i = 0; i < numberOfPoints; i++) 
         {
             Double[] point = new Double[2];
