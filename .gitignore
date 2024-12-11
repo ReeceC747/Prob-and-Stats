@@ -1,8 +1,7 @@
 #Ignore .DS_Store files
 .DS_Store
 
-#Ignore .csv files
-*.csv
+
 
 #Ignore .xlsx files
 *.xlsx
