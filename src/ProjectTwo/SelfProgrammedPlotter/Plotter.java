@@ -1,4 +1,4 @@
-package ProjectTwo;
+package ProjectTwo.SelfProgrammedPlotter;
 
 import java.io.File;
 import java.io.FileNotFoundException;

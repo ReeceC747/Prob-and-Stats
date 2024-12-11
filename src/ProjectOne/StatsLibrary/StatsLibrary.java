@@ -163,16 +163,16 @@ public class StatsLibrary
         return variance;
     }
 
-    public double findStandardDeviation(ArrayList<Double> listOfNumbers)    
+    public double findStandardDeviation(ArrayList<Double> yValues)    
     {
-        double mean = findMean(listOfNumbers);
-        Double[] deviations = new Double[listOfNumbers.size()];
+        double mean = findMean(yValues);
+        Double[] deviations = new Double[yValues.size()];
         double sum = 0;
         double standardDeviation = 0;
 
-        for(int i = 0; i < listOfNumbers.size(); i++)
+        for(int i = 0; i < yValues.size(); i++)
         {
-            deviations[i] = listOfNumbers.get(i) - mean; 
+            deviations[i] = yValues.get(i) - mean; 
         }
 
         for(int i = 0; i < deviations.length; i++)
@@ -182,7 +182,7 @@ public class StatsLibrary
             sum = deviations[i] + sum;
         }
 
-        standardDeviation = sum / (listOfNumbers.size() - 1);
+        standardDeviation = sum / (yValues.size() - 1);
 
         standardDeviation = Math.sqrt(standardDeviation);
 

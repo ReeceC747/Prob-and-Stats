@@ -6,13 +6,13 @@ import java.util.ArrayList;
  * This class will be used to create data points with a specific function
  * function will be f(x) = 1/10*x^2
  */
-public class equation 
+public class Equation 
 {
     //Left and right bounds of the function
     private double lowerBound, upperBound;
 
     //Constructor that initalizes the bounds, 
-    public equation(double lowerBoundP, double upperBoundP)
+    public Equation(double lowerBoundP, double upperBoundP)
     {
         //If the lower bound is less than the upper bound, set the bounds
         if(lowerBoundP < upperBoundP)

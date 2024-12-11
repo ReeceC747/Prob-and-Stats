@@ -1,0 +1,7 @@
+{
+    "dependency": {
+        "groupId": "org.jfree",
+        "artifactId": "jfreechart",
+        "version": "1.5.3"
+    }
+}
