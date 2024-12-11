@@ -2,10 +2,6 @@
 .DS_Store
 
 
-
-#Ignore .xlsx files
-*.xlsx
-
 #Ignore test files
 src/ProjectTwo/SmoothTester.java
 src/ProjectTwo/PlotterTest.java
