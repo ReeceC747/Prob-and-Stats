@@ -14,4 +14,4 @@ in project Two
 
 - VideoGameSalesReport, (unifinished), has the document for the report and the csv used with the data for part 2
 
-- Pokemon TCG on phone (Unfinished)
+- PokemonOnPhone, Video of me playing my TCG on my phone, the video lasts until it gets an error which is comparable to playing it elsewhere
